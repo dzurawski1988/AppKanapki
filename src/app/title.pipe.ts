@@ -1,15 +1,15 @@
 // capitalize.pipe.ts
-
-import { Pipe, PipeTrasform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'capitalize'
+  name: 'title'
 })
-export class CapitalizePipe implements PipeTrasform {
+export class TitlePipe implements PipeTransform {
   public transform(value: string): string {
-    return value
-      .split(' ')
-      .map((word) => word[0].toUpperCase().concat(word.slice(1)))
-      .join(' ')
+    return value //  'john smith'
+      .split(' ') //  [ 'john', 'smith' ]
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      //  [ 'John', 'Smith' ]
+      .join(' ') //  'John Smith'
   }
 }

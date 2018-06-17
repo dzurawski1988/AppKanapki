@@ -1,0 +1,15 @@
+<section>
+    <sandwich-search (searchQuery) = "search($event)"></sandwich-search>
+</section>
+
+<ul>
+<li *ngFor="let sandwich of sandwiches">
+    <p>{{sandwich.name | uppercase}} / Cena {{sandwich.price | currency}}</p>
+    <p>Ingredients: {{sandwich.ingredients.name}}
+        with {{sandwich.sauce}} sauce
+    </p>
+    <button type="button" style="color: red" (click) ="deleteSandwich(sandwich.id)">DELETE</button>
+</li>
+</ul>
+
+

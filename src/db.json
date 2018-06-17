@@ -1,0 +1,48 @@
+{
+  "sandwiches": [
+    {
+      "name": "Lala Sandwich",
+      "sauce": "soy",
+      "ingredients": {
+        "name": "ham",
+        "fresh": false
+      },
+      "grilled": true,
+      "price": 20,
+      "id": 1
+    },
+    {
+      "name": "kolejna Sandwich",
+      "sauce": "soy",
+      "ingredients": {
+        "name": "lettuce",
+        "fresh": true
+      },
+      "grilled": false,
+      "price": 5,
+      "id": 2
+    },
+    {
+      "name": "Z szynką Sandwich",
+      "sauce": "bbq",
+      "ingredients": {
+        "name": "cheese",
+        "fresh": true
+      },
+      "grilled": true,
+      "price": 10,
+      "id": 3
+    },
+    {
+      "name": "Z warzywami Sandwich",
+      "sauce": "hot",
+      "ingredients": {
+        "name": "lettuce",
+        "fresh": true
+      },
+      "grilled": true,
+      "price": 5,
+      "id": 4
+    }
+  ]
+}

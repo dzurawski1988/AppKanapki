@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<!-- sandwich-form.component.html -->
+<form [formGroup]="sandwichForm" (ngSubmit)="submit()" novalidate>
+  <section>
+    <input formControlName="name" type="text" placeholder="Tuna Sandwich">
+    <p style="color: red" *ngIf="showErrors && sandwichForm.get('name').errors?.required">Name is required</p>
+    <p style="color: red" *ngIf="showErrors && sandwichForm.get('name').errors?.pattern">Pattern</p>
+  </section>
+
+  <section>
+    <input formControlName="sauce" value="bbq" type="radio">BBQ
+    <input formControlName="sauce" value="soy" type="radio">SOY
+    <input formControlName="sauce" value="hot" type="radio">HOT
+  </section>
+
+  <section>
+    <select formControlName="ingredients">
+      <option value="" disabled>Ingredients...</option>
+      <option *ngFor="let ingr of ingredients" [ngValue]="ingr">
+        {{ingr.name}}
+      </option>
+    </select>
+    <p style="color: red" *ngIf="showErrors && sandwichForm.get('ingredients').errors?.required">Ingrediends is required</p>
+  </section>
+
+  <section>
+    <input formControlName="grilled" type="checkbox">grilled
+  </section>
+
+  <section>
+    <input formControlName="price" type="number" placeholder="12.99">
+    <p style="color: red" *ngIf="showErrors && sandwichForm.get('price').errors?.required">Price is required</p>
+  </section>
+
+  <section>
+    <button type="submit">Create sandwich!</button>
+  </section>
+</form>
